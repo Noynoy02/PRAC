@@ -1,0 +1,113 @@
+html, body {
+    margin: 0; 
+    padding: 0;
+    height: 100%;
+}
+
+.scroll-container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.page-section {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.hero-page {
+    background-color: rgb(255, 255, 255);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 160px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-nav ul { 
+    display: flex;       
+    list-style: none;    
+    gap: 90px;           
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 700;
+}
+
+.center-large {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Allows the area to expand fully within the 100vh viewport section */
+    width: 100%;
+}
+
+/* This structural wrapper stacks items correctly and controls the layer layout context */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.title-large {
+    margin: 0;
+    margin-top: 170px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 118px;
+    font-weight: 800;
+    position: relative;
+    z-index: 1; /* Sits behind the image layer */
+}
+
+.profile-image {
+    position: absolute;
+    bottom: 0;
+    width: 450px;
+    height: auto;
+    object-fit: cover;
+    z-index: 2; /* Sits over the text layer */
+}
+/*next page */
+.next-page {
+     background-color: rgb(255, 255, 255);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-start;
+     
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 80px;
+}
+.titlelarge2 {
+    margin: 0;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 118px;
+    font-weight: 800;
+}
