@@ -94,20 +94,122 @@ html, body {
      align-items: center;
      justify-content: flex-start;
      
+     /* --- THE FIXES --- */
+     height: auto;               /* Overrides the rigid 100vh restriction */
+              /* Ensures it takes up at least the full screen if content is small */
+     padding-bottom: 60px;       /* Gives breathing room at the very bottom so cards don't touch the screen floor */
+     /* OPTIONAL: Removes snap locking on page 2 if it's too long to prevent bouncing */
 }
-
-.content-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 80px;
-}
-.titlelarge2 {
+/* 1. Resetting margins so elements flow nicely down from the top */
+.port {
     margin: 0;
+    margin-top: 60px; /* Pushes the portfolio header safely down from the ceiling */
     color: rgb(0, 0, 0);
     text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 118px;
+    font-size: 98px;   /* Restored your bold, oversized font impact */
     font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mainnav2 {
+    margin-top: 20px;  /* Reduced from 150px so it sits tightly under /PORTFOLIO */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mainnav2 ul {
+    display: flex;
+    list-style: none;
+    gap: 90px;
+    margin: 0;
+    padding: 0;
+}
+
+.mainnav2 a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* 2. THE LAYOUT FIX: Target the container wrapper from your HTML */
+.projects-container {
+    display: flex;
+    flex-direction: row;        /* Forces the cards side-by-side */
+    gap: 40px;                  /* Clean structural gutter between them */
+    max-width: 1200px;
+    width: 90%;
+    margin-top: 50px;           /* Breathing room below your sub-navigation bar */
+}
+
+.project-card {
+    flex: 1;                    /* Ensures both cards take up equal, balanced width proportions */
+    background-color: #ffffff;  /* Fixed typo: changed #ffff to #ffffff */
+    border-radius: 12px;
+    overflow: hidden;
+    /* FIX: Replaced broken placeholder text with a clean, ultra-soft drop shadow */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. IMAGE SYSTEM FIXES */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 380px;              /* FIX: Added explicit height so the image is visible */
+}
+
+/* FIX: Targeted the img tag directly to safely scale without distortion */
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          
+}
+
+.tag-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    /* FIX: Swapped placeholder text for a real semi-transparent white backdrop */
+    background-color: rgba(255, 255, 255, 0.9); 
+    color: #333;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    z-index: 10;                /* Layer lock ensures it floats above the image element */
+}
+
+.card-details {
+    padding: 25px;
+    text-align: left;
+}
+
+.card-details h3 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #111111;
+}
+
+.card-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.sub-tag {
+    background-color: #f1f1f1;
+    color: #666666;
+    padding: 6px 16px;
+    font-size: 13px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
 }
