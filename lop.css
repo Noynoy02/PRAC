@@ -45,15 +45,21 @@ html, body {
 .main-nav ul { 
     display: flex;
     list-style: none;
-    gap: clamp(10px, 3vw, 40px); /* Slightly tighter mobile gap */
+    gap: clamp(12px, 3vw, 25px); /* Tighter gaps for mobile */
     margin: 0;
-    padding: clamp(10px, 2vw, 14px) clamp(15px, 5vw, 36px);
-    flex-wrap: wrap;
-    justify-content: center; /* Center links on wrapping */
+    padding: 10px 24px; /* Reduced vertical padding */
+    flex-wrap: nowrap; /* PREVENTS wrapping into a big box */
+    overflow-x: auto; /* Allows horizontal swipe if needed */
+    -webkit-overflow-scrolling: touch;
     background-color: #1a1a1a;
     border-radius: 50px;
     box-shadow: 0 4px 20px rgba(0,0,0, 0.15);
-    max-width: 90%;
+    max-width: 90%; /* Stops it from hitting screen edges */
+}
+
+/* Hide the ugly scrollbar track while keeping swipe functionality */
+.main-nav ul::-webkit-scrollbar {
+    display: none;
 }
 
 .main-nav a {
