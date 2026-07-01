@@ -32,11 +32,12 @@ html, body {
 }
 
 /* ===== NAVIGATION ===== */
+/* ===== NAVIGATION ===== */
 .main-nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: clamp(12px, 3vw, 20px) 15px; /* Added side padding for mobile */
+    padding: clamp(10px, 3vw, 20px) 10px; /* Reduced side padding to give more room */
     font-family: 'Poppins', sans-serif;
     width: 100%;
     box-sizing: border-box;
@@ -45,21 +46,18 @@ html, body {
 .main-nav ul { 
     display: flex;
     list-style: none;
-    gap: clamp(12px, 3vw, 25px); /* Tighter gaps for mobile */
+    /* Tighter, fluid gaps that shrink smoothly on small mobile screens */
+    gap: clamp(8px, 2.5vw, 35px); 
     margin: 0;
-    padding: 10px 24px; /* Reduced vertical padding */
-    flex-wrap: nowrap; /* PREVENTS wrapping into a big box */
-    overflow-x: auto; /* Allows horizontal swipe if needed */
-    -webkit-overflow-scrolling: touch;
+    /* Reduced horizontal padding to prevent pushing text past the edge */
+    padding: 10px clamp(12px, 4vw, 30px); 
+    flex-wrap: nowrap; 
     background-color: #1a1a1a;
     border-radius: 50px;
     box-shadow: 0 4px 20px rgba(0,0,0, 0.15);
-    max-width: 90%; /* Stops it from hitting screen edges */
-}
-
-/* Hide the ugly scrollbar track while keeping swipe functionality */
-.main-nav ul::-webkit-scrollbar {
-    display: none;
+    width: max-content; /* Shrinks tightly around the text */
+    max-width: 95%;     /* Ensures it leaves a safe gap from screen edges */
+    box-sizing: border-box;
 }
 
 .main-nav a {
@@ -67,9 +65,10 @@ html, body {
     text-decoration: none;
     color: #ffffff;
     font-weight: 600;
-    font-size: clamp(11px, 2.2vw, 14px);
+    /* Slightly smaller base size on mobile (10px) scaling up dynamically */
+    font-size: clamp(10px, 2.2vw, 14px); 
     transition: color 0.2s ease;
-    white-space: nowrap;
+    white-space: nowrap; /* Keeps words on a single line */
 }
 
 .main-nav a:hover,
